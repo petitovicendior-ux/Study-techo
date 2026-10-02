@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Diploma | StudyTech</title>
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(
+                        168,
+                        85,
+                        247,
+                        0.18
+                    ),
+                    transparent 40%
+                ),
+                #07070b;
+
+            color: #ffffff;
+        }
+
+        .diploma-page {
+            min-height: 100vh;
+        }
+
+        /* =========================================
+           CONTENEDOR
+        ========================================= */
+
+        .diploma-container {
+            width: min(1200px, 94%);
+
+            margin: auto;
+
+            padding:
+                45px 0 80px;
+        }
+
+        /* =========================================
+           ENCABEZADO
+        ========================================= */
+
+        .diploma-header {
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            font-family: Arial, sans-serif;
+        }
+
+        .diploma-header h1 {
+            margin: 0 0 8px;
+
+            font-size: 38px;
+
+            font-weight: 900;
+        }
+
+        .diploma-header h1 span {
+            color: #a855f7;
+        }
+
+        .diploma-header p {
+            margin: 0;
+
+            color: #a1a1aa;
+        }
+
+        /* =========================================
+           DIPLOMA
+        ========================================= */
+
+        .diploma {
+            position: relative;
+
+            width: 100%;
+
+            min-height: 760px;
+
+            padding:
+                65px 75px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #17131f,
+                    #0c0a10
+                );
+
+            border:
+                3px solid
+                #a855f7;
+
+            box-shadow:
+                0 0 0 8px #0b0910,
+                0 0 0 10px #c084fc,
+                0 0 60px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.28
+                );
+
+            overflow: hidden;
+        }
+
+        /* =========================================
+           MARCO INTERIOR
+        ========================================= */
+
+        .diploma::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 20px;
+
+            border:
+                1px solid
+                rgba(
+                    192,
+                    132,
+                    252,
+                    0.65
+                );
+
+            pointer-events: none;
+        }
+
+        .diploma::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 30px;
+
+            border:
+                1px solid
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.25
+                );
+
+            pointer-events: none;
+        }
+
+        /* =========================================
+           DECORACIONES
+        ========================================= */
+
+        .corner {
+            position: absolute;
+
+            width: 90px;
+
+            height: 90px;
+
+            border-color:
+                #a855f7;
+
+            border-style:
+                solid;
+
+            opacity: 0.8;
+        }
+
+        .corner.top-left {
+            top: 35px;
+
+            left: 35px;
+
+            border-width:
+                3px 0 0 3px;
+        }
+
+        .corner.top-right {
+            top: 35px;
+
+            right: 35px;
+
+            border-width:
+                3px 3px 0 0;
+        }
+
+        .corner.bottom-left {
+            bottom: 35px;
+
+            left: 35px;
+
+            border-width:
+                0 0 3px 3px;
+        }
+
+        .corner.bottom-right {
+            bottom: 35px;
+
+            right: 35px;
+
+            border-width:
+                0 3px 3px 0;
+        }
+
+        /* =========================================
+           LOGO
+        ========================================= */
+
+        .diploma-logo {
+            position: relative;
+
+            display: flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            gap: 14px;
+
+            margin-bottom: 28px;
+
+            z-index: 2;
+        }
+
+        .logo-mark {
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #a855f7,
+                    #6d28d9
+                );
+
+            color: white;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 23px;
+
+            font-weight: 1000;
+
+            letter-spacing: -2px;
+
+            box-shadow:
+                0 0 30px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.35
+                );
+        }
+
+        .logo-text {
+            text-align: left;
+        }
+
+        .logo-name {
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 28px;
+
+            font-weight: 1000;
+
+            letter-spacing: 2px;
+        }
+
+        .logo-name span {
+            color: #c084fc;
+        }
+
+        .logo-subtitle {
+            margin-top: 4px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            color: #a1a1aa;
+        }
+
+        /* =========================================
+           TÍTULO
+        ========================================= */
+
+        .diploma-title {
+            position: relative;
+
+            text-align: center;
+
+            z-index: 2;
+        }
+
+        .diploma-title .small-title {
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 14px;
+
+            letter-spacing: 6px;
+
+            color: #c084fc;
+
+            font-weight: 800;
+        }
+
+        .diploma-title h2 {
+            margin:
+                10px 0 5px;
+
+            font-size:
+                clamp(
+                    48px,
+                    7vw,
+                    82px
+                );
+
+            letter-spacing: 5px;
+
+            font-weight: 900;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 25px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.30
+                );
+        }
+
+        .diploma-title .subtitle {
+            font-family:
+                Arial,
+                sans-serif;
+
+            color: #a1a1aa;
+
+            letter-spacing: 5px;
+
+            font-size: 13px;
+        }
+
+        /* =========================================
+           ORNAMENTO
+        ========================================= */
+
+        .ornament {
+            display: flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            gap: 15px;
+
+            margin:
+                25px auto;
+        }
+
+        .ornament-line {
+            width: 150px;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #a855f7
+                );
+        }
+
+        .ornament-line.right {
+            background:
+                linear-gradient(
+                    90deg,
+                    #a855f7,
+                    transparent
+                );
+        }
+
+        .ornament-diamond {
+            width: 12px;
+
+            height: 12px;
+
+            background: #a855f7;
+
+            transform:
+                rotate(45deg);
+
+            box-shadow:
+                0 0 15px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.7
+                );
+        }
+
+        /* =========================================
+           NOMBRE
+        ========================================= */
+
+        .presented-to {
+            position: relative;
+
+            text-align: center;
+
+            z-index: 2;
+
+            margin-top: 25px;
+        }
+
+        .presented-to p {
+            margin:
+                0 0 12px;
+
+            color: #a1a1aa;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+        }
+
+        .student-name {
+            font-size:
+                clamp(
+                    38px,
+                    6vw,
+                    62px
+                );
+
+            font-weight: 900;
+
+            font-style: italic;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 20px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.25
+                );
+        }
+
+        .name-line {
+            width: 520px;
+
+            max-width: 85%;
+
+            height: 1px;
+
+            margin:
+                10px auto 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #c084fc,
+                    transparent
+                );
+        }
+
+        /* =========================================
+           TEXTO
+        ========================================= */
+
+        .diploma-description {
+            position: relative;
+
+            max-width: 800px;
+
+            margin: auto;
+
+            text-align: center;
+
+            color: #d4d4d8;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            z-index: 2;
+        }
+
+        /* =========================================
+           PROFESIÓN
+        ========================================= */
+
+        .profession-box {
+            position: relative;
+
+            width: fit-content;
+
+            max-width: 90%;
+
+            margin:
+                25px auto;
+
+            padding:
+                16px 35px;
+
+            border:
+                1px solid
+                rgba(
+                    192,
+                    132,
+                    252,
+                    0.55
+                );
+
+            background:
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.07
+                );
+
+            text-align: center;
+
+            z-index: 2;
+        }
+
+        .profession-label {
+            display: block;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            color: #a1a1aa;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 6px;
+        }
+
+        .profession-name {
+            display: block;
+
+            font-size: 30px;
+
+            font-weight: 900;
+
+            color: #c084fc;
+        }
+
+        /* =========================================
+           DATOS
+        ========================================= */
+
+        .diploma-details {
+            position: relative;
+
+            display: flex;
+
+            justify-content:
+                center;
+
+            gap: 70px;
+
+            margin-top: 35px;
+
+            z-index: 2;
+
+            flex-wrap: wrap;
+        }
+
+        .detail {
+            text-align: center;
+
+            min-width: 160px;
+        }
+
+        .detail-label {
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #71717a;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            font-weight: 800;
+        }
+
+        .detail-value {
+            color: #e4e4e7;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 800;
+        }
+
+        /* =========================================
+           PARTE INFERIOR
+        ========================================= */
+
+        .diploma-footer {
+            position: relative;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-end;
+
+            margin-top: 45px;
+
+            padding:
+                0 70px;
+
+            z-index: 2;
+        }
+
+        /* =========================================
+           FIRMA
+        ========================================= */
+
+        .signature-area {
+            text-align: center;
+        }
+
+        .signature {
+            font-family:
+                "Brush Script MT",
+                "Segoe Script",
+                cursive;
+
+            font-size: 43px;
+
+            font-style: italic;
+
+            font-weight: 700;
+
+            color: #d8b4fe;
+
+            transform:
+                rotate(-7deg);
+
+            display: inline-block;
+
+            text-shadow:
+                0 0 12px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.35
+                );
+        }
+
+        .signature-line {
+            width: 190px;
+
+            height: 1px;
+
+            background: #a855f7;
+
+            margin:
+                3px auto 7px;
+        }
+
+        .signature-title {
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 9px;
+
+            color: #71717a;
+
+            letter-spacing: 2px;
+        }
+
+        /* =========================================
+           SELLO
+        ========================================= */
+
+        .seal {
+            width: 105px;
+
+            height: 105px;
+
+            border-radius: 50%;
+
+            border:
+                3px solid
+                #a855f7;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            color: #c084fc;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            transform:
+                rotate(-10deg);
+
+            box-shadow:
+                inset 0 0 20px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.10
+                );
+        }
+
+        .seal strong {
+            font-size: 25px;
+
+            letter-spacing: -1px;
+        }
+
+        .seal span {
+            margin-top: 3px;
+
+            font-size: 7px;
+
+            letter-spacing: 1.5px;
+        }
+
+        /* =========================================
+           NÚMERO
+        ========================================= */
+
+        .certificate-number {
+            position: absolute;
+
+            right: 48px;
+
+            bottom: 25px;
+
+            color: #52525b;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+        /* =========================================
+           BOTONES
+        ========================================= */
+
+        .actions {
+            display: flex;
+
+            justify-content:
+                center;
+
+            gap: 15px;
+
+            margin-top: 35px;
+
+            flex-wrap: wrap;
+
+            font-family:
+                Arial,
+                sans-serif;
+        }
+
+        .action-button {
+            padding:
+                14px 25px;
+
+            border:
+                1px solid
+                #a855f7;
+
+            border-radius: 10px;
+
+            background: #a855f7;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .action-button:hover {
+            background: #9333ea;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 0 25px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.35
+                );
+        }
+
+        .action-button.secondary {
+            background: transparent;
+
+            color: #c084fc;
+        }
+
+        /* =========================================
+           ESTADOS
+        ========================================= */
+
+        .loading {
+            text-align: center;
+
+            padding:
+                100px 20px;
+
+            color: #c084fc;
+
+            font-family:
+                Arial,
+                sans-serif;
+        }
+
+        .error {
+            text-align: center;
+
+            padding:
+                100px 20px;
+
+            color: #f87171;
+
+            font-family:
+                Arial,
+                sans-serif;
+        }
+
+        .error a {
+            display: inline-block;
+
+            margin-top: 25px;
+        }
+
+        /* =========================================
+           IMPRESIÓN
+        ========================================= */
+
+        @media print {
+
+            @page {
+                size: landscape;
+
+                margin: 0;
+            }
+
+            body {
+                background:
+                    white !important;
+            }
+
+            .navbar,
+            .diploma-header,
+            .actions {
+                display:
+                    none !important;
+            }
+
+            .diploma-page {
+                background:
+                    white !important;
+            }
+
+            .diploma-container {
+                width: 100%;
+
+                padding: 25px;
+            }
+
+            .diploma {
+                min-height: 90vh;
+
+                box-shadow: none;
+
+                page-break-inside:
+                    avoid;
+            }
+
+        }
+
+        /* =========================================
+           MÓVIL
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .diploma {
+                padding:
+                    55px 25px;
+
+                min-height: 850px;
+            }
+
+            .diploma-footer {
+                padding:
+                    0 15px;
+
+                gap: 25px;
+            }
+
+            .diploma-details {
+                gap: 25px;
+            }
+
+            .seal {
+                width: 80px;
+
+                height: 80px;
+            }
+
+            .seal strong {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="diploma-page">
+
+
+    <header class="navbar">
+
+        <a
+            href="dashboard.html"
+            class="brand"
+        >
+
+            <div class="brand-mark">
+                ST
+            </div>
+
+            <div>
+
+                <div class="brand-text">
+                    StudyTech
+                </div>
+
+                <div class="brand-subtitle">
+                    D.W.J.D
+                </div>
+
+            </div>
+
+        </a>
+
+    </header>
+
+
+    <main class="diploma-container">
+
+
+        <section class="diploma-header">
+
+            <h1>
+                Diploma de
+                <span>StudyTech</span>
+            </h1>
+
+            <p>
+                Reconocimiento de finalización académica
+            </p>
+
+        </section>
+
+
+        <div
+            id="certificateContent"
+            class="loading"
+        >
+            Verificando certificado...
+        </div>
+
+
+    </main>
+
+
+    <script type="module">
+
+
+        /* =========================================
+           FIREBASE
+        ========================================= */
+
+        import {
+            auth,
+            db
+        } from "./js/firebase.js";
+
+
+        import {
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
+
+        import {
+            doc,
+            getDoc
+        } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+
+        /* =========================================
+           PROFESIÓN
+        ========================================= */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const professionId =
+            params.get("profession") ||
+            localStorage.getItem(
+                "studytech_profession"
+            );
+
+
+        const professionNames = {
+
+            "desarrollo-web":
+                "Desarrollo Web",
+
+            "programacion":
+                "Programación",
+
+            "redes-informaticas":
+                "Redes Informáticas",
+
+            "ciberseguridad":
+                "Ciberseguridad",
+
+            "administracion-sistemas":
+                "Administración de Sistemas",
+
+            "analisis-datos":
+                "Análisis de Datos",
+
+            "diseno-grafico":
+                "Diseño Gráfico",
+
+            "fotografia":
+                "Fotografía",
+
+            "marketing-digital":
+                "Marketing Digital",
+
+            "emprendimiento":
+                "Emprendimiento",
+
+            "administracion":
+                "Administración",
+
+            "ingles":
+                "Inglés",
+
+            "enfermeria":
+                "Enfermería",
+
+            "electricidad":
+                "Electricidad",
+
+            "mecanica":
+                "Mecánica"
+
+        };
+
+
+        const certificateContent =
+            document.getElementById(
+                "certificateContent"
+            );
+
+
+        /* =========================================
+           FORMATEAR FECHA
+        ========================================= */
+
+        function formatDate(
+            dateValue
+        ) {
+
+            if (!dateValue) {
+
+                return "Fecha no disponible";
+
+            }
+
+
+            let date;
+
+
+            if (
+                typeof dateValue.toDate ===
+                "function"
+            ) {
+
+                date =
+                    dateValue.toDate();
+
+            } else {
+
+                date =
+                    new Date(
+                        dateValue
+                    );
+
+            }
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return "Fecha no disponible";
+
+            }
+
+
+            return date.toLocaleDateString(
+                "es-DO",
+                {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                }
+            );
+
+        }
+
+
+        /* =========================================
+           MOSTRAR ERROR
+        ========================================= */
+
+        function showError(
+            title,
+            message
+        ) {
+
+            certificateContent.className =
+                "error";
+
+
+            certificateContent.innerHTML = `
+
+                <h2>
+                    ${title}
+                </h2>
+
+                <p>
+                    ${message}
+                </p>
+
+                <a
+                    href="dashboard.html"
+                    class="action-button"
+                >
+                    ← Volver al dashboard
+                </a>
+
+            `;
+
+        }
+
+
+        /* =========================================
+           MOSTRAR DIPLOMA
+        ========================================= */
+
+        function showDiploma(
+            certificate
+        ) {
+
+            const studentName =
+                certificate.studentName ||
+                "Estudiante StudyTech";
+
+
+            const certificateProfession =
+                certificate.professionName ||
+                professionNames[
+                    professionId
+                ] ||
+                "Ruta de aprendizaje";
+
+
+            const score =
+                certificate.percentage ??
+                certificate.score ??
+                0;
+
+
+            const certificateId =
+                certificate.certificateId ||
+                "Sin identificación";
+
+
+            const issuedDate =
+                formatDate(
+                    certificate.completedAt
+                );
+
+
+            certificateContent.className =
+                "";
+
+
+            certificateContent.innerHTML = `
+
+                <section class="diploma">
+
+
+                    <div class="corner top-left">
+                    </div>
+
+                    <div class="corner top-right">
+                    </div>
+
+                    <div class="corner bottom-left">
+                    </div>
+
+                    <div class="corner bottom-right">
+                    </div>
+
+
+                    <!-- LOGO -->
+
+                    <div class="diploma-logo">
+
+                        <div class="logo-mark">
+                            ST
+                        </div>
+
+                        <div class="logo-text">
+
+                            <div class="logo-name">
+                                Study<span>Tech</span>
+                            </div>
+
+                            <div class="logo-subtitle">
+                                EDUCACIÓN · TECNOLOGÍA · FUTURO
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TÍTULO -->
+
+                    <div class="diploma-title">
+
+                        <div class="small-title">
+                            D.W.J.D PRESENTA
+                        </div>
+
+                        <h2>
+                            DIPLOMA
+                        </h2>
+
+                        <div class="subtitle">
+                            CERTIFICADO DE FINALIZACIÓN
+                        </div>
+
+                    </div>
+
+
+                    <!-- ORNAMENTO -->
+
+                    <div class="ornament">
+
+                        <div class="ornament-line">
+                        </div>
+
+                        <div class="ornament-diamond">
+                        </div>
+
+                        <div
+                            class="ornament-line right"
+                        >
+                        </div>
+
+                    </div>
+
+
+                    <!-- ESTUDIANTE -->
+
+                    <div class="presented-to">
+
+                        <p>
+                            SE OTORGA A
+                        </p>
+
+                        <div class="student-name">
+                            ${studentName}
+                        </div>
+
+                        <div class="name-line">
+                        </div>
+
+                    </div>
+
+
+                    <!-- DESCRIPCIÓN -->
+
+                    <p class="diploma-description">
+
+                        Por haber completado
+                        satisfactoriamente la ruta
+                        de aprendizaje y aprobado
+                        la evaluación final,
+                        demostrando conocimientos
+                        en el área de:
+
+                    </p>
+
+
+                    <!-- PROFESIÓN -->
+
+                    <div class="profession-box">
+
+                        <span
+                            class="profession-label"
+                        >
+                            PROFESIÓN / ÁREA DE ESTUDIO
+                        </span>
+
+                        <span
+                            class="profession-name"
+                        >
+                            ${certificateProfession}
+                        </span>
+
+                    </div>
+
+
+                    <!-- DATOS -->
+
+                    <div class="diploma-details">
+
+
+                        <div class="detail">
+
+                            <span
+                                class="detail-label"
+                            >
+                                CALIFICACIÓN
+                            </span>
+
+                            <span
+                                class="detail-value"
+                            >
+                                ${score}%
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span
+                                class="detail-label"
+                            >
+                                FECHA DE EMISIÓN
+                            </span>
+
+                            <span
+                                class="detail-value"
+                            >
+                                ${issuedDate}
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span
+                                class="detail-label"
+                            >
+                                IDENTIFICACIÓN
+                            </span>
+
+                            <span
+                                class="detail-value"
+                            >
+                                ${certificateId}
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- PIE -->
+
+                    <div class="diploma-footer">
+
+
+                        <div class="signature-area">
+
+                            <div class="signature">
+                                D.W.J.D
+                            </div>
+
+                            <div
+                                class="signature-line"
+                            >
+                            </div>
+
+                            <div
+                                class="signature-title"
+                            >
+                                FIRMA DEL DIRECTOR
+                            </div>
+
+                        </div>
+
+
+                        <div class="seal">
+
+                            <strong>
+                                ST
+                            </strong>
+
+                            <span>
+                                CERTIFICADO
+                            </span>
+
+                            <span>
+                                STUDYTECH
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div
+                        class="certificate-number"
+                    >
+                        CERTIFICATE ID ·
+                        ${certificateId}
+                    </div>
+
+
+                </section>
+
+
+                <div class="actions">
+
+                    <button
+                        type="button"
+                        class="action-button"
+                        id="printDiploma"
+                    >
+                        🖨️ Imprimir / Guardar PDF
+                    </button>
+
+
+                    <a
+                        href="dashboard.html"
+                        class="action-button secondary"
+                    >
+                        ← Volver al dashboard
+                    </a>
+
+                </div>
+
+            `;
+
+
+            const printButton =
+                document.getElementById(
+                    "printDiploma"
+                );
+
+
+            if (printButton) {
+
+                printButton.addEventListener(
+                    "click",
+                    () => {
+
+                        window.print();
+
+                    }
+                );
+
+            }
+
+        }
+
+
+        /* =========================================
+           COMPROBAR AUTENTICACIÓN
+        ========================================= */
+
+        onAuthStateChanged(
+            auth,
+            async (user) => {
+
+                if (!user) {
+
+                    showError(
+                        "Sesión requerida",
+                        "Debes iniciar sesión para consultar tu diploma."
+                    );
+
+                    return;
+
+                }
+
+
+                if (!professionId) {
+
+                    showError(
+                        "Certificado no especificado",
+                        "No se indicó la profesión del certificado."
+                    );
+
+                    return;
+
+                }
+
+
+                try {
+
+                    console.log(
+                        "StudyTech: buscando certificado..."
+                    );
+
+
+                    console.log(
+                        "Usuario:",
+                        user.uid
+                    );
+
+
+                    console.log(
+                        "Profesión:",
+                        professionId
+                    );
+
+
+                    /* ==============================
+                       REFERENCIA FIRESTORE
+                    ============================== */
+
+                    const certificateReference =
+                        doc(
+                            db,
+                            "users",
+                            user.uid,
+                            "certificates",
+                            professionId
+                        );
+
+
+                    /* ==============================
+                       LEER CERTIFICADO
+                    ============================== */
+
+                    const certificateSnapshot =
+                        await getDoc(
+                            certificateReference
+                        );
+
+
+                    /* ==============================
+                       CERTIFICADO NO EXISTE
+                    ============================== */
+
+                    if (
+                        !certificateSnapshot.exists()
+                    ) {
+
+                        showError(
+                            "Certificado no encontrado",
+                            "Esta cuenta todavía no tiene un certificado aprobado para esta profesión."
+                        );
+
+                        return;
+
+                    }
+
+
+                    /* ==============================
+                       DATOS DEL CERTIFICADO
+                    ============================== */
+
+                    const certificate =
+                        certificateSnapshot.data();
+
+
+                    console.log(
+                        "StudyTech: certificado encontrado.",
+                        certificate
+                    );
+
+
+                    /* ==============================
+                       VALIDAR CERTIFICADO
+                    ============================== */
+
+                    if (
+                        certificate.approved !==
+                        true
+                    ) {
+
+                        showError(
+                            "Certificado no válido",
+                            "El registro encontrado no corresponde a un certificado aprobado."
+                        );
+
+                        return;
+
+                    }
+
+
+                    /* ==============================
+                       MOSTRAR DIPLOMA
+                    ============================== */
+
+                    showDiploma(
+                        certificate
+                    );
+
+
+                } catch (error) {
+
+                    console.error(
+                        "StudyTech: error consultando certificado.",
+                        error
+                    );
+
+
+                    showError(
+                        "No se pudo cargar el diploma",
+                        "Ocurrió un problema al consultar tu certificado en Firebase. Revisa la conexión y vuelve a intentarlo."
+                    );
+
+                }
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

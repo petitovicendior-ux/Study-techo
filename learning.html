@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Aprendizaje | StudyTech</title>
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/learning.css"
+    >
+</head>
+
+<body class="learning-page">
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <a
+            href="dashboard.html"
+            class="brand"
+        >
+
+            <div class="brand-mark">
+                ST
+            </div>
+
+            <div>
+                <div class="brand-text">
+                    StudyTech
+                </div>
+
+                <div class="brand-subtitle">
+                    D.W.J.D
+                </div>
+            </div>
+
+        </a>
+
+        <a
+            href="dashboard.html"
+            class="back-button"
+        >
+            ← Volver
+        </a>
+
+    </header>
+
+
+    <!-- =========================================
+         CABECERA DE LA PROFESIÓN
+    ========================================== -->
+
+    <section class="profession-header">
+
+        <div class="breadcrumb">
+            <span>Profesiones</span>
+            /
+            <span id="professionCategory">
+                Tecnología
+            </span>
+        </div>
+
+        <h1 id="professionName">
+            Cargando...
+        </h1>
+
+        <p id="professionDescription">
+            Cargando información de la ruta de aprendizaje...
+        </p>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main class="learning-layout">
+
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="learning-sidebar">
+
+            <div class="sidebar-title">
+                CONTENIDO
+            </div>
+
+            <div
+                id="lessonList"
+                class="lesson-list"
+            ></div>
+
+
+            <!-- PROGRESO -->
+
+            <div class="progress-box">
+
+                <div class="progress-header">
+
+                    <span>
+                        PROGRESO DE LA RUTA
+                    </span>
+
+                    <span id="progressText">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="progressFill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================
+             CONTENIDO DE LA LECCIÓN
+        ====================================== -->
+
+        <section class="lesson-content">
+
+            <article class="lesson-card">
+
+
+                <!-- CABECERA -->
+
+                <div class="lesson-top">
+
+                    <div
+                        id="lessonStatus"
+                        class="lesson-status"
+                    >
+                        LECCIÓN
+                    </div>
+
+                </div>
+
+
+                <!-- TÍTULO -->
+
+                <h2 id="lessonTitle">
+                    Cargando lección...
+                </h2>
+
+
+                <!-- DESCRIPCIÓN -->
+
+                <p
+                    id="lessonText"
+                    class="lesson-text"
+                >
+                    Cargando contenido...
+                </p>
+
+
+                <!-- =================================
+                     CONCEPTOS
+                ================================== -->
+
+                <section class="content-section">
+
+                    <div class="content-section-label">
+                        01 — FUNDAMENTOS
+                    </div>
+
+                    <h3>
+                        Conceptos principales
+                    </h3>
+
+                    <div
+                        id="conceptGrid"
+                        class="concept-grid"
+                    ></div>
+
+                </section>
+
+
+                <!-- =================================
+                     EJEMPLO
+                ================================== -->
+
+                <section class="content-section">
+
+                    <div class="content-section-label">
+                        02 — APLICACIÓN
+                    </div>
+
+                    <h3>
+                        Ejemplo práctico
+                    </h3>
+
+                    <div class="code-example">
+
+                        <pre id="lessonExample">Cargando ejemplo...</pre>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     IMPORTANTE
+                ================================== -->
+
+                <div class="important-box">
+
+                    <strong>
+                        IMPORTANTE
+                    </strong>
+
+                    <br>
+
+                    <span id="lessonImportant">
+                        Concepto clave
+                    </span>
+
+                </div>
+
+
+                <!-- =================================
+                     EJERCICIO
+                ================================== -->
+
+                <section class="exercise-box">
+
+                    <div class="exercise-header">
+
+                        <div class="exercise-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <small>
+                                EJERCICIO
+                            </small>
+
+                            <h3>
+                                Comprueba lo aprendido
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <p
+                        id="exerciseQuestion"
+                        class="exercise-question"
+                    >
+                        Responde la pregunta para comprobar
+                        tus conocimientos.
+                    </p>
+
+
+                    <div
+                        id="exerciseOptions"
+                        class="exercise-options"
+                    ></div>
+
+
+                    <div
+                        id="exerciseResult"
+                        class="exercise-result"
+                    ></div>
+
+                </section>
+
+
+                <!-- =================================
+                     NAVEGACIÓN
+                ================================== -->
+
+                <div class="lesson-navigation">
+
+                    <button
+                        type="button"
+                        id="previousLesson"
+                    >
+                        ← Anterior
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="completeLesson"
+                    >
+                        ✓ Marcar como completada
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="nextLesson"
+                    >
+                        Siguiente →
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <p>
+            <strong>StudyTech</strong>
+            — Aprende. Practica. Construye.
+        </p>
+
+        <p>
+            D.W.J.D © 2026
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script
+        type="module"
+        src="js/learning.js"
+    ></script>
+
+</body>
+
+</html>

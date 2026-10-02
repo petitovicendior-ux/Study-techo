@@ -1,0 +1,2331 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Evaluación Final | StudyTech</title>
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(139, 92, 246, 0.18),
+                    transparent 35%
+                ),
+                #08080d;
+            color: #ffffff;
+        }
+
+        .final-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .final-navbar {
+            width: 100%;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            background: rgba(8, 8, 13, 0.92);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            background: linear-gradient(
+                135deg,
+                #7c3aed,
+                #a855f7
+            );
+            box-shadow:
+                0 0 20px rgba(168, 85, 247, 0.35);
+        }
+
+        .brand-text {
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .brand-subtitle {
+            color: #c084fc;
+            font-size: 0.7rem;
+            margin-top: 2px;
+            letter-spacing: 2px;
+        }
+
+        .back-button {
+            color: #c084fc;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .back-button:hover {
+            color: white;
+        }
+
+        .final-container {
+            width: min(950px, 92%);
+            margin: 50px auto;
+            flex: 1;
+        }
+
+        .final-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .final-label {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 8px 14px;
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            border-radius: 999px;
+            color: #c084fc;
+            background: rgba(139, 92, 246, 0.08);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .final-header h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        .final-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #a9a9b5;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .exam-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-card {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(168, 85, 247, 0.18);
+            border-radius: 16px;
+            background: #0e0c15;
+        }
+
+        .info-card strong {
+            display: block;
+            font-size: 1.4rem;
+            color: #c084fc;
+            margin-bottom: 5px;
+        }
+
+        .info-card span {
+            color: #8f8f9c;
+            font-size: 0.85rem;
+        }
+
+        .question-card {
+            margin-bottom: 22px;
+            padding: 28px;
+            border: 1px solid rgba(168, 85, 247, 0.18);
+            border-radius: 20px;
+            background: linear-gradient(
+                145deg,
+                #11101a,
+                #0d0b13
+            );
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        .question-number {
+            color: #a855f7;
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .question-card h2 {
+            margin: 0 0 22px;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .options {
+            display: grid;
+            gap: 12px;
+        }
+
+        .option {
+            width: 100%;
+            padding: 15px 18px;
+            text-align: left;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 12px;
+            background: #0a0910;
+            color: #d8d8df;
+            cursor: pointer;
+            transition: 0.2s ease;
+            font-size: 0.98rem;
+        }
+
+        .option:hover {
+            border-color: #a855f7;
+            background: rgba(139, 92, 246, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .option.selected {
+            border-color: #a855f7;
+            background: rgba(139, 92, 246, 0.16);
+            color: white;
+            box-shadow:
+                0 0 15px rgba(168, 85, 247, 0.12);
+        }
+
+        .submit-area {
+            margin-top: 35px;
+            padding: 28px;
+            text-align: center;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 20px;
+            background: #0e0c15;
+        }
+
+        .submit-area p {
+            color: #9999a6;
+            margin-top: 0;
+        }
+
+        .primary-button {
+            border: none;
+            padding: 15px 28px;
+            border-radius: 12px;
+            background: linear-gradient(
+                135deg,
+                #7c3aed,
+                #a855f7
+            );
+            color: white;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow:
+                0 8px 25px rgba(124, 58, 237, 0.25);
+            transition: 0.2s ease;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 12px 30px rgba(168, 85, 247, 0.35);
+        }
+
+        .primary-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result {
+            display: none;
+            margin-top: 25px;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .result.success {
+            display: block;
+            border: 1px solid rgba(34, 197, 94, 0.35);
+            background: rgba(34, 197, 94, 0.08);
+        }
+
+        .result.failure {
+            display: block;
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            background: rgba(239, 68, 68, 0.08);
+        }
+
+        .result-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .result h2 {
+            margin: 0 0 10px;
+        }
+
+        .result p {
+            color: #b8b8c3;
+            line-height: 1.6;
+        }
+
+        .score {
+            margin: 20px 0;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #c084fc;
+        }
+
+        .result-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .result-link {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            background: rgba(139, 92, 246, 0.18);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        .result-link:hover {
+            background: rgba(139, 92, 246, 0.28);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #b6b6c2;
+        }
+
+        .error-message {
+            text-align: center;
+            padding: 30px;
+            color: #fca5a5;
+        }
+
+        .final-footer {
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid rgba(168, 85, 247, 0.15);
+            color: #777783;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 700px) {
+
+            .final-navbar {
+                padding: 15px 4%;
+            }
+
+            .exam-info {
+                grid-template-columns: 1fr;
+            }
+
+            .final-container {
+                width: 94%;
+                margin: 30px auto;
+            }
+
+            .question-card {
+                padding: 22px;
+            }
+
+            .final-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body class="final-page">
+
+    <header class="final-navbar">
+
+        <a
+            href="dashboard.html"
+            class="brand"
+        >
+
+            <div class="brand-mark">
+                ST
+            </div>
+
+            <div>
+
+                <div class="brand-text">
+                    StudyTech
+                </div>
+
+                <div class="brand-subtitle">
+                    D.W.J.D
+                </div>
+
+            </div>
+
+        </a>
+
+        <a
+            href="dashboard.html"
+            class="back-button"
+        >
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+    <main class="final-container">
+
+        <section class="final-header">
+
+            <span class="final-label">
+                EVALUACIÓN FINAL
+            </span>
+
+            <h1 id="professionTitle">
+                Cargando evaluación...
+            </h1>
+
+            <p>
+                Responde las preguntas para demostrar
+                los conocimientos adquiridos durante
+                tu ruta de aprendizaje.
+            </p>
+
+        </section>
+
+
+        <section class="exam-info">
+
+            <div class="info-card">
+
+                <strong id="questionCount">
+                    5
+                </strong>
+
+                <span>
+                    Preguntas
+                </span>
+
+            </div>
+
+            <div class="info-card">
+
+                <strong>
+                    80%
+                </strong>
+
+                <span>
+                    Mínimo para aprobar
+                </span>
+
+            </div>
+
+            <div class="info-card">
+
+                <strong>
+                    100%
+                </strong>
+
+                <span>
+                    Certificado al aprobar
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <div id="examContainer">
+
+            <div class="loading">
+                Preparando evaluación...
+            </div>
+
+        </div>
+
+
+        <section
+            id="submitArea"
+            class="submit-area"
+            style="display:none;"
+        >
+
+            <p>
+                Revisa tus respuestas antes de finalizar.
+            </p>
+
+            <button
+                id="submitExam"
+                class="primary-button"
+                type="button"
+            >
+                Finalizar evaluación
+            </button>
+
+        </section>
+
+
+        <section
+            id="result"
+            class="result"
+        >
+
+            <div
+                id="resultIcon"
+                class="result-icon"
+            >
+                🏆
+            </div>
+
+            <h2 id="resultTitle">
+                Resultado
+            </h2>
+
+            <div
+                id="score"
+                class="score"
+            >
+                0%
+            </div>
+
+            <p id="resultMessage">
+                Resultado de la evaluación.
+            </p>
+
+            <div
+                id="resultLinks"
+                class="result-links"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="final-footer">
+
+        <p>
+            <strong>StudyTech</strong>
+            — Aprende. Practica. Construye.
+        </p>
+
+        <p>
+            D.W.J.D © 2026
+        </p>
+
+    </footer>
+
+
+    <script type="module">
+
+        import {
+            auth,
+            db
+        } from "./js/firebase.js";
+
+        import {
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
+        import {
+            doc,
+            setDoc,
+            getDoc
+        } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+
+        /* ==========================================
+           PROFESION
+        ========================================== */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        const profession =
+            params.get("profession") ||
+            localStorage.getItem(
+                "studytech_profession"
+            ) ||
+            "desarrollo-web";
+
+
+        /* ==========================================
+           NOMBRES
+        ========================================== */
+
+        const professionNames = {
+
+            "desarrollo-web":
+                "Desarrollo Web",
+
+            "programacion":
+                "Programación",
+
+            "redes-informaticas":
+                "Redes Informáticas",
+
+            "ciberseguridad":
+                "Ciberseguridad",
+
+            "administracion-sistemas":
+                "Administración de Sistemas",
+
+            "analisis-datos":
+                "Análisis de Datos",
+
+            "diseno-grafico":
+                "Diseño Gráfico",
+
+            "fotografia":
+                "Fotografía",
+
+            "marketing-digital":
+                "Marketing Digital",
+
+            "emprendimiento":
+                "Emprendimiento",
+
+            "administracion":
+                "Administración",
+
+            "ingles":
+                "Inglés",
+
+            "enfermeria":
+                "Enfermería",
+
+            "electricidad":
+                "Electricidad",
+
+            "mecanica":
+                "Mecánica"
+
+        };
+
+
+        const professionName =
+            professionNames[profession] ||
+            "Ruta de aprendizaje";
+
+
+        document.getElementById(
+            "professionTitle"
+        ).textContent =
+            professionName;
+
+
+        /* ==========================================
+           EVALUACIONES
+        ========================================== */
+
+        const exams = {
+
+            "desarrollo-web": [
+
+                {
+                    question:
+                        "¿Qué lenguaje se utiliza principalmente para estructurar una página web?",
+
+                    options: [
+                        "HTML",
+                        "CSS",
+                        "JavaScript",
+                        "SQL"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué tecnología controla principalmente la apariencia visual de una página?",
+
+                    options: [
+                        "HTML",
+                        "CSS",
+                        "JavaScript",
+                        "DNS"
+                    ],
+
+                    answer: 1
+                },
+
+                {
+                    question:
+                        "¿Qué lenguaje permite agregar interactividad a una página web?",
+
+                    options: [
+                        "HTML",
+                        "CSS",
+                        "JavaScript",
+                        "HTTP"
+                    ],
+
+                    answer: 2
+                },
+
+                {
+                    question:
+                        "¿Qué parte de una aplicación web interactúa directamente con el usuario?",
+
+                    options: [
+                        "Base de datos",
+                        "Servidor",
+                        "Backend",
+                        "Frontend"
+                    ],
+
+                    answer: 3
+                },
+
+                {
+                    question:
+                        "¿Qué debes hacer normalmente antes de comenzar a programar un proyecto?",
+
+                    options: [
+                        "Publicarlo",
+                        "Planificarlo",
+                        "Eliminarlo",
+                        "Ignorar sus objetivos"
+                    ],
+
+                    answer: 1
+                }
+
+            ],
+
+
+            "programacion": [
+
+                {
+                    question:
+                        "¿Qué es un algoritmo?",
+
+                    options: [
+                        "Una secuencia de pasos para resolver un problema",
+                        "Un monitor",
+                        "Una red inalámbrica",
+                        "Un archivo de imagen"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué elemento permite almacenar un valor en un programa?",
+
+                    options: [
+                        "Variable",
+                        "Monitor",
+                        "Router",
+                        "Cable"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Para qué sirve una condición?",
+
+                    options: [
+                        "Para almacenar imágenes",
+                        "Para tomar decisiones según una situación",
+                        "Para apagar el equipo",
+                        "Para crear una red física"
+                    ],
+
+                    answer: 1
+                },
+
+                {
+                    question:
+                        "¿Qué es una función?",
+
+                    options: [
+                        "Un bloque de código que realiza una tarea",
+                        "Un dispositivo de red",
+                        "Una carpeta",
+                        "Una pantalla"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué proceso busca y corrige errores de un programa?",
+
+                    options: [
+                        "Diseño",
+                        "Depuración",
+                        "Impresión",
+                        "Compresión"
+                    ],
+
+                    answer: 1
+                }
+
+            ],
+
+
+            "redes-informaticas": [
+
+                {
+                    question:
+                        "¿Qué dispositivo conecta diferentes dispositivos dentro de una LAN?",
+
+                    options: [
+                        "Switch",
+                        "Monitor",
+                        "Teclado",
+                        "Impresora"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué dispositivo permite conectar una red local con otras redes?",
+
+                    options: [
+                        "Switch",
+                        "Router",
+                        "Mouse",
+                        "Monitor"
+                    ],
+
+                    answer: 1
+                },
+
+                {
+                    question:
+                        "¿Qué protocolo se utiliza para obtener automáticamente una dirección IP?",
+
+                    options: [
+                        "DHCP",
+                        "HTML",
+                        "CSS",
+                        "FTP"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué medio utiliza cables de cobre para transmitir datos en muchas redes Ethernet?",
+
+                    options: [
+                        "Fibra óptica",
+                        "UTP",
+                        "Bluetooth",
+                        "Infrarrojo"
+                    ],
+
+                    answer: 1
+                },
+
+                {
+                    question:
+                        "¿Qué representa una dirección IP?",
+
+                    options: [
+                        "La identificación lógica de un dispositivo en una red",
+                        "El tamaño del monitor",
+                        "El nombre del teclado",
+                        "La velocidad del procesador"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "ciberseguridad": [
+
+                {
+                    question:
+                        "¿Cuál es uno de los objetivos principales de la ciberseguridad?",
+
+                    options: [
+                        "Proteger sistemas y datos",
+                        "Aumentar el brillo",
+                        "Cambiar el teclado",
+                        "Eliminar Internet"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué característica debe tener una contraseña segura?",
+
+                    options: [
+                        "Ser fácil de adivinar",
+                        "Usar información pública",
+                        "Ser larga y difícil de adivinar",
+                        "Ser igual en todas las cuentas"
+                    ],
+
+                    answer: 2
+                },
+
+                {
+                    question:
+                        "¿Qué es el phishing?",
+
+                    options: [
+                        "Una técnica para engañar y obtener información",
+                        "Un sistema operativo",
+                        "Un cable de red",
+                        "Un navegador"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué ayuda a proteger una cuenta además de la contraseña?",
+
+                    options: [
+                        "Autenticación multifactor",
+                        "Desactivar actualizaciones",
+                        "Compartir la contraseña",
+                        "Usar la misma contraseña"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué debes hacer ante un enlace sospechoso?",
+
+                    options: [
+                        "Abrirlo inmediatamente",
+                        "Compartirlo",
+                        "Verificarlo antes de interactuar",
+                        "Descargar todo lo que ofrece"
+                    ],
+
+                    answer: 2
+                }
+
+            ],
+
+
+            "administracion-sistemas": [
+
+                {
+                    question:
+                        "¿Qué función cumple un sistema operativo?",
+
+                    options: [
+                        "Gestionar recursos del equipo",
+                        "Fabricar cables",
+                        "Diseñar muebles",
+                        "Crear electricidad"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es un servidor?",
+
+                    options: [
+                        "Un sistema que proporciona servicios o recursos",
+                        "Un teclado",
+                        "Un monitor",
+                        "Una impresora"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Por qué son importantes las actualizaciones?",
+
+                    options: [
+                        "Pueden corregir errores y vulnerabilidades",
+                        "Eliminan siempre todos los archivos",
+                        "Desconectan Internet",
+                        "Reducen necesariamente la seguridad"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué permite una copia de seguridad?",
+
+                    options: [
+                        "Recuperar información ante ciertos problemas",
+                        "Aumentar el tamaño físico del monitor",
+                        "Cambiar el teclado",
+                        "Eliminar todos los usuarios"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué herramienta permite observar procesos y recursos del sistema?",
+
+                    options: [
+                        "Administrador de tareas",
+                        "Calculadora",
+                        "Paint",
+                        "Bloc de notas"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "analisis-datos": [
+
+                {
+                    question:
+                        "¿Qué es un dato?",
+
+                    options: [
+                        "Una unidad de información",
+                        "Un cable",
+                        "Un monitor",
+                        "Un router"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Para qué sirve analizar datos?",
+
+                    options: [
+                        "Para obtener información útil para la toma de decisiones",
+                        "Para apagar servidores",
+                        "Para reemplazar un teclado",
+                        "Para crear cables"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué herramienta se utiliza frecuentemente para organizar datos en tablas?",
+
+                    options: [
+                        "Hoja de cálculo",
+                        "Monitor",
+                        "Router",
+                        "Micrófono"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es un promedio?",
+
+                    options: [
+                        "Una medida obtenida al sumar valores y dividirlos entre su cantidad",
+                        "Una contraseña",
+                        "Una dirección IP",
+                        "Un archivo"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué representa un gráfico?",
+
+                    options: [
+                        "Datos de forma visual",
+                        "Una conexión física",
+                        "Un sistema operativo",
+                        "Una contraseña"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "diseno-grafico": [
+
+                {
+                    question:
+                        "¿Qué elemento ayuda a organizar visualmente una composición?",
+
+                    options: [
+                        "Composición",
+                        "Router",
+                        "Servidor",
+                        "DNS"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué estudia principalmente la tipografía?",
+
+                    options: [
+                        "Las formas y uso de las letras",
+                        "Las redes",
+                        "Los procesadores",
+                        "Las bases de datos"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué puede transmitir el color en un diseño?",
+
+                    options: [
+                        "Sensaciones y significado visual",
+                        "Direcciones IP",
+                        "Velocidad de red",
+                        "Procesos del sistema"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es el contraste?",
+
+                    options: [
+                        "Diferencia visual entre elementos",
+                        "Una dirección web",
+                        "Un protocolo",
+                        "Una base de datos"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué debe buscar un diseño efectivo?",
+
+                    options: [
+                        "Comunicar claramente un mensaje",
+                        "Ser siempre complicado",
+                        "Usar todos los colores",
+                        "Eliminar la jerarquía visual"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "fotografia": [
+
+                {
+                    question:
+                        "¿Qué controla principalmente la cantidad de luz que entra por el objetivo?",
+
+                    options: [
+                        "Diafragma",
+                        "Altavoz",
+                        "Router",
+                        "Teclado"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es la composición fotográfica?",
+
+                    options: [
+                        "La organización de los elementos dentro de una imagen",
+                        "La velocidad de Internet",
+                        "La edición de texto",
+                        "La conexión de una red"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué elemento es fundamental para una fotografía?",
+
+                    options: [
+                        "Luz",
+                        "Router",
+                        "Servidor",
+                        "Switch"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué puede cambiar la exposición de una fotografía?",
+
+                    options: [
+                        "Apertura, velocidad e ISO",
+                        "DNS, HTTP y FTP",
+                        "RAM, ROM y CPU",
+                        "HTML, CSS y JavaScript"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué significa enfocar?",
+
+                    options: [
+                        "Ajustar la imagen para que un elemento aparezca nítido",
+                        "Aumentar la velocidad de Internet",
+                        "Cambiar una contraseña",
+                        "Crear una red"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "marketing-digital": [
+
+                {
+                    question:
+                        "¿Qué busca el marketing digital?",
+
+                    options: [
+                        "Comunicar y promocionar productos o servicios mediante canales digitales",
+                        "Reparar routers",
+                        "Crear sistemas operativos",
+                        "Instalar cables"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es un público objetivo?",
+
+                    options: [
+                        "Grupo de personas al que se dirige una comunicación",
+                        "Un servidor",
+                        "Una contraseña",
+                        "Una impresora"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué puede utilizarse para medir resultados digitales?",
+
+                    options: [
+                        "Métricas",
+                        "Cables",
+                        "Teclados",
+                        "Monitores"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es contenido digital?",
+
+                    options: [
+                        "Información creada y distribuida mediante medios digitales",
+                        "Un cable de red",
+                        "Un procesador",
+                        "Una tarjeta de red"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué ayuda a conocer mejor a una audiencia?",
+
+                    options: [
+                        "Analizar sus necesidades e intereses",
+                        "Ignorar sus datos",
+                        "Publicar sin objetivo",
+                        "Eliminar métricas"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "emprendimiento": [
+
+                {
+                    question:
+                        "¿Qué es una idea de negocio?",
+
+                    options: [
+                        "Una propuesta que busca resolver una necesidad mediante un producto o servicio",
+                        "Una contraseña",
+                        "Una dirección IP",
+                        "Un sistema operativo"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es un cliente?",
+
+                    options: [
+                        "Persona o entidad que adquiere un producto o servicio",
+                        "Un servidor",
+                        "Un router",
+                        "Un programa"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué permite un modelo de negocio?",
+
+                    options: [
+                        "Describir cómo funciona y genera valor una iniciativa",
+                        "Cambiar el teclado",
+                        "Aumentar la memoria RAM",
+                        "Crear una red física"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es una propuesta de valor?",
+
+                    options: [
+                        "La razón por la que una oferta resulta útil para un cliente",
+                        "Una dirección IP",
+                        "Una contraseña",
+                        "Un cable"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es importante antes de lanzar una idea?",
+
+                    options: [
+                        "Investigar las necesidades del público",
+                        "Ignorar a los clientes",
+                        "No probar nada",
+                        "Eliminar el objetivo"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "administracion": [
+
+                {
+                    question:
+                        "¿Qué es administrar?",
+
+                    options: [
+                        "Planificar, organizar y controlar recursos para alcanzar objetivos",
+                        "Crear cables",
+                        "Reparar monitores",
+                        "Diseñar páginas"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es planificar?",
+
+                    options: [
+                        "Definir objetivos y acciones para alcanzarlos",
+                        "Eliminar información",
+                        "Desconectar sistemas",
+                        "Cambiar contraseñas"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué significa organizar?",
+
+                    options: [
+                        "Distribuir recursos y responsabilidades de manera ordenada",
+                        "Eliminar procesos",
+                        "Apagar equipos",
+                        "Borrar documentos"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué ayuda a evaluar resultados?",
+
+                    options: [
+                        "Indicadores",
+                        "Cables",
+                        "Teclados",
+                        "Monitores"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es un objetivo?",
+
+                    options: [
+                        "Un resultado que se pretende alcanzar",
+                        "Un servidor",
+                        "Un archivo temporal",
+                        "Un router"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "ingles": [
+
+                {
+                    question:
+                        "¿Qué significa 'Hello'?",
+
+                    options: [
+                        "Hola",
+                        "Adiós",
+                        "Gracias",
+                        "Casa"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué significa 'Computer'?",
+
+                    options: [
+                        "Computadora",
+                        "Teléfono",
+                        "Libro",
+                        "Puerta"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Cuál es el pasado de 'go'?",
+
+                    options: [
+                        "Went",
+                        "Goed",
+                        "Going",
+                        "Goes"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué significa 'Good morning'?",
+
+                    options: [
+                        "Buenos días",
+                        "Buenas noches",
+                        "Hasta luego",
+                        "Gracias"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Cuál oración es correcta?",
+
+                    options: [
+                        "I am a student.",
+                        "I student am.",
+                        "Am I student a.",
+                        "Student I a am."
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "enfermeria": [
+
+                {
+                    question:
+                        "¿Cuál es una función fundamental del personal de enfermería?",
+
+                    options: [
+                        "Brindar cuidados de salud dentro de su ámbito profesional",
+                        "Fabricar computadoras",
+                        "Administrar redes",
+                        "Diseñar edificios"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Por qué es importante la higiene de manos en el ámbito sanitario?",
+
+                    options: [
+                        "Ayuda a reducir la transmisión de microorganismos",
+                        "Aumenta el brillo de las herramientas",
+                        "Mejora la velocidad de Internet",
+                        "Sirve para medir la temperatura"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué debe hacerse antes de realizar un procedimiento de atención?",
+
+                    options: [
+                        "Verificar la información y preparar el procedimiento de forma segura",
+                        "Ignorar la identificación",
+                        "No revisar materiales",
+                        "Actuar sin preparación"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es importante al registrar información de un paciente?",
+
+                    options: [
+                        "Mantener registros claros y precisos",
+                        "Inventar información",
+                        "Eliminar datos importantes",
+                        "Compartir información sin autorización"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué principio es importante en la atención sanitaria?",
+
+                    options: [
+                        "Respeto y confidencialidad",
+                        "Compartir datos privados públicamente",
+                        "Ignorar al paciente",
+                        "Evitar registrar información"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "electricidad": [
+
+                {
+                    question:
+                        "¿Qué unidad mide la tensión eléctrica?",
+
+                    options: [
+                        "Voltio",
+                        "Amperio",
+                        "Ohmio",
+                        "Vatio"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué unidad mide la corriente eléctrica?",
+
+                    options: [
+                        "Amperio",
+                        "Voltio",
+                        "Ohmio",
+                        "Hertz"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué unidad mide la resistencia?",
+
+                    options: [
+                        "Ohmio",
+                        "Voltio",
+                        "Amperio",
+                        "Vatio"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué elemento puede abrir o cerrar un circuito?",
+
+                    options: [
+                        "Interruptor",
+                        "Monitor",
+                        "Router",
+                        "Teclado"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es un circuito eléctrico?",
+
+                    options: [
+                        "Un camino por el que puede circular corriente eléctrica",
+                        "Una página web",
+                        "Una red social",
+                        "Un archivo"
+                    ],
+
+                    answer: 0
+                }
+
+            ],
+
+
+            "mecanica": [
+
+                {
+                    question:
+                        "¿Qué estudia la mecánica?",
+
+                    options: [
+                        "El movimiento y las fuerzas que actúan sobre los cuerpos",
+                        "Las páginas web",
+                        "Las redes informáticas",
+                        "Los idiomas"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es una fuerza?",
+
+                    options: [
+                        "Una interacción capaz de modificar el movimiento o deformar un cuerpo",
+                        "Un archivo",
+                        "Una contraseña",
+                        "Un protocolo"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué instrumento puede utilizarse para medir longitud?",
+
+                    options: [
+                        "Regla o cinta métrica",
+                        "Router",
+                        "Monitor",
+                        "Teclado"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es la velocidad?",
+
+                    options: [
+                        "La relación entre desplazamiento y tiempo",
+                        "Una contraseña",
+                        "Una dirección IP",
+                        "Un tipo de archivo"
+                    ],
+
+                    answer: 0
+                },
+
+                {
+                    question:
+                        "¿Qué es el mantenimiento preventivo?",
+
+                    options: [
+                        "Acciones realizadas para prevenir fallos y conservar un equipo",
+                        "Eliminar un equipo",
+                        "Ignorar problemas",
+                        "Desconectar todos los sistemas"
+                    ],
+
+                    answer: 0
+                }
+
+            ]
+
+        };
+
+
+        /* ==========================================
+           ELEMENTOS
+        ========================================== */
+
+        const examContainer =
+            document.getElementById(
+                "examContainer"
+            );
+
+        const submitArea =
+            document.getElementById(
+                "submitArea"
+            );
+
+        const submitExam =
+            document.getElementById(
+                "submitExam"
+            );
+
+        const result =
+            document.getElementById(
+                "result"
+            );
+
+        const resultIcon =
+            document.getElementById(
+                "resultIcon"
+            );
+
+        const resultTitle =
+            document.getElementById(
+                "resultTitle"
+            );
+
+        const scoreElement =
+            document.getElementById(
+                "score"
+            );
+
+        const resultMessage =
+            document.getElementById(
+                "resultMessage"
+            );
+
+        const resultLinks =
+            document.getElementById(
+                "resultLinks"
+            );
+
+
+        let questions =
+            exams[profession] ||
+            exams["desarrollo-web"];
+
+        let selectedAnswers =
+            new Array(
+                questions.length
+            ).fill(null);
+
+
+        /* ==========================================
+           MOSTRAR PREGUNTAS
+        ========================================== */
+
+        function renderExam() {
+
+            examContainer.innerHTML = "";
+
+            questions.forEach(
+                function(question, questionIndex) {
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+                    card.className =
+                        "question-card";
+
+                    const number =
+                        document.createElement(
+                            "div"
+                        );
+
+                    number.className =
+                        "question-number";
+
+                    number.textContent =
+                        "PREGUNTA " +
+                        (questionIndex + 1);
+
+                    const title =
+                        document.createElement(
+                            "h2"
+                        );
+
+                    title.textContent =
+                        question.question;
+
+                    const options =
+                        document.createElement(
+                            "div"
+                        );
+
+                    options.className =
+                        "options";
+
+                    question.options.forEach(
+                        function(option, optionIndex) {
+
+                            const button =
+                                document.createElement(
+                                    "button"
+                                );
+
+                            button.type =
+                                "button";
+
+                            button.className =
+                                "option";
+
+                            button.textContent =
+                                option;
+
+                            button.addEventListener(
+                                "click",
+                                function() {
+
+                                    selectedAnswers[
+                                        questionIndex
+                                    ] =
+                                        optionIndex;
+
+                                    options
+                                        .querySelectorAll(
+                                            ".option"
+                                        )
+                                        .forEach(
+                                            function(
+                                                item
+                                            ) {
+
+                                                item.classList.remove(
+                                                    "selected"
+                                                );
+
+                                            }
+                                        );
+
+                                    button.classList.add(
+                                        "selected"
+                                    );
+
+                                    checkAllAnswered();
+
+                                }
+                            );
+
+                            options.appendChild(
+                                button
+                            );
+
+                        }
+                    );
+
+                    card.appendChild(
+                        number
+                    );
+
+                    card.appendChild(
+                        title
+                    );
+
+                    card.appendChild(
+                        options
+                    );
+
+                    examContainer.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+            document.getElementById(
+                "questionCount"
+            ).textContent =
+                questions.length;
+
+            submitArea.style.display =
+                "block";
+
+            checkAllAnswered();
+        }
+
+
+        /* ==========================================
+           COMPROBAR RESPUESTAS
+        ========================================== */
+
+        function checkAllAnswered() {
+
+            const complete =
+                selectedAnswers.every(
+                    function(answer) {
+
+                        return answer !== null;
+
+                    }
+                );
+
+            submitExam.disabled =
+                !complete;
+        }
+
+
+        /* ==========================================
+           FINALIZAR EXAMEN
+        ========================================== */
+
+        submitExam.addEventListener(
+            "click",
+            async function() {
+
+                let correct = 0;
+
+                questions.forEach(
+                    function(question, index) {
+
+                        if (
+                            selectedAnswers[index] ===
+                            question.answer
+                        ) {
+
+                            correct++;
+
+                        }
+
+                    }
+                );
+
+                const percentage =
+                    Math.round(
+                        correct /
+                        questions.length *
+                        100
+                    );
+
+                await finishExam(
+                    correct,
+                    percentage
+                );
+
+            }
+        );
+
+
+        /* ==========================================
+           GUARDAR CERTIFICADO
+        ========================================== */
+
+        async function finishExam(
+            correct,
+            percentage
+        ) {
+
+            const user =
+                auth.currentUser;
+
+            if (!user) {
+
+                window.location.href =
+                    "login.html";
+
+                return;
+
+            }
+
+            const approved =
+                percentage >= 80;
+
+            result.style.display =
+                "block";
+
+            submitArea.style.display =
+                "none";
+
+            scoreElement.textContent =
+                percentage + "%";
+
+            if (approved) {
+
+                result.className =
+                    "result success";
+
+                resultIcon.textContent =
+                    "🏆";
+
+                resultTitle.textContent =
+                    "¡Evaluación aprobada!";
+
+                resultMessage.textContent =
+                    "Has demostrado los conocimientos necesarios para completar esta ruta de aprendizaje.";
+
+                const certificateReference =
+                    doc(
+                        db,
+                        "users",
+                        user.uid,
+                        "certificates",
+                        profession
+                    );
+
+                let certificateId =
+                    "ST-2026-" +
+                    Math.floor(
+                        100000 +
+                        Math.random() *
+                        900000
+                    );
+
+                const existingCertificate =
+                    await getDoc(
+                        certificateReference
+                    );
+
+                if (
+                    existingCertificate.exists()
+                ) {
+
+                    const oldData =
+                        existingCertificate.data();
+
+                    if (
+                        oldData.certificateId
+                    ) {
+
+                        certificateId =
+                            oldData.certificateId;
+
+                    }
+
+                }
+
+                const certificateData = {
+
+                    certificateId:
+                        certificateId,
+
+                    professionId:
+                        profession,
+
+                    professionName:
+                        professionName,
+
+                    score:
+                        correct,
+
+                    totalQuestions:
+                        questions.length,
+
+                    percentage:
+                        percentage,
+
+                    studentName:
+                        user.displayName ||
+                        user.email?.split("@")[0] ||
+                        "Estudiante",
+
+                    studentEmail:
+                        user.email ||
+                        "",
+
+                    completedAt:
+                        new Date().toISOString(),
+
+                    approved:
+                        true
+
+                };
+
+                await setDoc(
+                    certificateReference,
+                    certificateData,
+                    {
+                        merge: true
+                    }
+                );
+
+                localStorage.setItem(
+                    "studytech_profession",
+                    profession
+                );
+
+                localStorage.setItem(
+                    "studytech_score",
+                    percentage.toString()
+                );
+
+                localStorage.setItem(
+                    "studytech_certificate",
+                    "true"
+                );
+
+                localStorage.setItem(
+                    "studytech_certificate_id",
+                    certificateId
+                );
+
+                localStorage.setItem(
+                    "studytech_certificate_date",
+                    new Date().toISOString()
+                );
+
+                resultLinks.innerHTML = `
+                    <a
+                        href="certificate.html?profession=${encodeURIComponent(profession)}"
+                        class="result-link"
+                    >
+                        🏆 Ver mi certificado
+                    </a>
+
+                    <a
+                        href="dashboard.html"
+                        class="result-link"
+                    >
+                        ← Ir al dashboard
+                    </a>
+                `;
+
+            } else {
+
+                result.className =
+                    "result failure";
+
+                resultIcon.textContent =
+                    "📚";
+
+                resultTitle.textContent =
+                    "Evaluación no aprobada";
+
+                resultMessage.textContent =
+                    "Necesitas obtener al menos 80% para aprobar. Puedes volver a estudiar la ruta y realizar nuevamente la evaluación.";
+
+                resultLinks.innerHTML = `
+                    <a
+                        href="learning.html?profession=${encodeURIComponent(profession)}"
+                        class="result-link"
+                    >
+                        📖 Repasar la ruta
+                    </a>
+
+                    <button
+                        type="button"
+                        class="result-link"
+                        id="retryExam"
+                    >
+                        🔄 Intentar nuevamente
+                    </button>
+
+                    <a
+                        href="dashboard.html"
+                        class="result-link"
+                    >
+                        ← Ir al dashboard
+                    </a>
+                `;
+
+                const retryExam =
+                    document.getElementById(
+                        "retryExam"
+                    );
+
+                if (retryExam) {
+
+                    retryExam.addEventListener(
+                        "click",
+                        function() {
+
+                            selectedAnswers =
+                                new Array(
+                                    questions.length
+                                ).fill(null);
+
+                            result.style.display =
+                                "none";
+
+                            renderExam();
+
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            });
+
+                        }
+                    );
+
+                }
+
+            }
+
+            result.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+
+        /* ==========================================
+           FIREBASE
+        ========================================== */
+
+        onAuthStateChanged(
+            auth,
+            function(user) {
+
+                if (!user) {
+
+                    window.location.href =
+                        "login.html";
+
+                    return;
+
+                }
+
+                renderExam();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

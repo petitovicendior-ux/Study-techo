@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Profesión | StudyTech</title>
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+    <style>
+
+        /* =========================================
+           STUDYTECH — PROFESSION
+        ========================================== */
+
+        .profession-page {
+            min-height: 100vh;
+
+            margin: 0;
+
+            background:
+                radial-gradient(
+                    circle at 75% 10%,
+                    rgba(168, 85, 247, 0.14),
+                    transparent 30%
+                ),
+                #080b12;
+
+            color: #ffffff;
+
+            font-family:
+                Inter,
+                Arial,
+                sans-serif;
+        }
+
+
+        .profession-container {
+            width: min(1100px, calc(100% - 40px));
+
+            margin: 0 auto;
+
+            padding:
+                30px 0 60px;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================== */
+
+        .profession-navbar {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding:
+                16px 20px;
+
+            margin-bottom: 45px;
+
+            border:
+                1px solid
+                rgba(168, 85, 247, 0.15);
+
+            border-radius: 15px;
+
+            background:
+                rgba(13, 16, 25, 0.90);
+
+            backdrop-filter:
+                blur(12px);
+        }
+
+
+        .profession-brand {
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+        }
+
+
+        .profession-logo {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #a855f7,
+                    #7c3aed
+                );
+
+            color: #ffffff;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            box-shadow:
+                0 0 20px
+                rgba(168, 85, 247, 0.30);
+        }
+
+
+        .profession-brand-text {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2px;
+        }
+
+
+        .profession-brand-text strong {
+            font-size: 15px;
+        }
+
+
+        .profession-brand-text span {
+            color: #a855f7;
+
+            font-size: 9px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        .profession-back {
+            color: #aeb3c1;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            transition:
+                color 0.2s ease;
+        }
+
+
+        .profession-back:hover {
+            color: #c084fc;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================== */
+
+        .profession-hero {
+            position: relative;
+
+            padding: 55px 50px;
+
+            overflow: hidden;
+
+            border-radius: 24px;
+
+            border:
+                1px solid
+                rgba(168, 85, 247, 0.20);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(35, 20, 55, 0.92),
+                    rgba(13, 16, 25, 0.98)
+                );
+
+            box-shadow:
+                0 25px 70px
+                rgba(0, 0, 0, 0.30);
+
+            text-align: center;
+        }
+
+
+        .profession-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            top: -160px;
+            right: -100px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(168, 85, 247, 0.10);
+
+            filter: blur(10px);
+        }
+
+
+        .profession-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            bottom: -160px;
+            left: -100px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(124, 58, 237, 0.08);
+
+            filter: blur(15px);
+        }
+
+
+        .profession-icon {
+            position: relative;
+
+            z-index: 2;
+
+            width: 82px;
+            height: 82px;
+
+            margin: 0 auto 22px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 22px;
+
+            background:
+                rgba(168, 85, 247, 0.12);
+
+            border:
+                1px solid
+                rgba(168, 85, 247, 0.25);
+
+            font-size: 38px;
+
+            box-shadow:
+                0 0 35px
+                rgba(168, 85, 247, 0.15);
+        }
+
+
+        .profession-category {
+            position: relative;
+
+            z-index: 2;
+
+            display: inline-block;
+
+            margin-bottom: 12px;
+
+            color: #c084fc;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .profession-title {
+            position: relative;
+
+            z-index: 2;
+
+            margin: 0 0 15px;
+
+            color: #ffffff;
+
+            font-size: 42px;
+
+            line-height: 1.15;
+
+            font-weight: 900;
+        }
+
+
+        .profession-description {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 650px;
+
+            margin:
+                0 auto 28px;
+
+            color: #9298a7;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .profession-start {
+            position: relative;
+
+            z-index: 2;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding:
+                0 28px;
+
+            border-radius: 11px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #a855f7,
+                    #7c3aed
+                );
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            box-shadow:
+                0 10px 30px
+                rgba(124, 58, 237, 0.25);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .profession-start:hover {
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(124, 58, 237, 0.38);
+        }
+
+
+        /* =========================================
+           INFORMACIÓN
+        ========================================== */
+
+        .profession-info {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 16px;
+
+            margin-top: 20px;
+        }
+
+
+        .profession-info-card {
+            padding: 22px;
+
+            border-radius: 16px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            background:
+                #101520;
+
+            text-align: center;
+        }
+
+
+        .profession-info-card strong {
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #ffffff;
+
+            font-size: 20px;
+        }
+
+
+        .profession-info-card span {
+            color: #747a89;
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================================
+           CONTENIDO
+        ========================================== */
+
+        .profession-content {
+            margin-top: 55px;
+        }
+
+
+        .profession-section-label {
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #a855f7;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        .profession-content h2 {
+            margin: 0 0 10px;
+
+            font-size: 27px;
+
+            font-weight: 850;
+        }
+
+
+        .profession-content > p {
+            margin: 0 0 25px;
+
+            color: #7e8492;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        .profession-topics {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+        }
+
+
+        .profession-topic {
+            padding: 20px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            border-radius: 14px;
+
+            background:
+                #101520;
+        }
+
+
+        .profession-topic strong {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #ffffff;
+
+            font-size: 14px;
+        }
+
+
+        .profession-topic span {
+            color: #777d8c;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================== */
+
+        @media (max-width: 700px) {
+
+            .profession-container {
+                width:
+                    calc(100% - 24px);
+
+                padding-top: 12px;
+            }
+
+
+            .profession-navbar {
+                margin-bottom: 25px;
+            }
+
+
+            .profession-hero {
+                padding:
+                    40px 22px;
+            }
+
+
+            .profession-title {
+                font-size: 31px;
+            }
+
+
+            .profession-description {
+                font-size: 13px;
+            }
+
+
+            .profession-info {
+                grid-template-columns: 1fr;
+            }
+
+
+            .profession-topics {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="profession-page">
+
+
+    <div class="profession-container">
+
+
+        <!-- =====================================
+             NAVBAR
+        ====================================== -->
+
+        <nav class="profession-navbar">
+
+            <div class="profession-brand">
+
+                <div class="profession-logo">
+                    ST
+                </div>
+
+                <div class="profession-brand-text">
+
+                    <strong>
+                        StudyTech
+                    </strong>
+
+                    <span>
+                        D.W.J.D
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="profession-back"
+            >
+                ← Volver al Dashboard
+            </a>
+
+        </nav>
+
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <section class="profession-hero">
+
+
+            <div
+                id="professionIcon"
+                class="profession-icon"
+            >
+                💻
+            </div>
+
+
+            <span
+                id="professionCategory"
+                class="profession-category"
+            >
+                TECNOLOGÍA
+            </span>
+
+
+            <h1
+                id="professionTitle"
+                class="profession-title"
+            >
+                Cargando profesión...
+            </h1>
+
+
+            <p
+                id="professionDescription"
+                class="profession-description"
+            >
+                Preparando tu ruta de aprendizaje...
+            </p>
+
+
+            <a
+                id="startLearning"
+                href="#"
+                class="profession-start"
+            >
+                Comenzar aprendizaje →
+            </a>
+
+        </section>
+
+
+
+        <!-- =====================================
+             INFORMACIÓN
+        ====================================== -->
+
+        <section class="profession-info">
+
+
+            <article class="profession-info-card">
+
+                <strong>
+                    6
+                </strong>
+
+                <span>
+                    Lecciones
+                </span>
+
+            </article>
+
+
+            <article class="profession-info-card">
+
+                <strong>
+                    5
+                </strong>
+
+                <span>
+                    Evaluaciones
+                </span>
+
+            </article>
+
+
+            <article class="profession-info-card">
+
+                <strong>
+                    1
+                </strong>
+
+                <span>
+                    Proyecto final
+                </span>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             CONTENIDO
+        ====================================== -->
+
+        <section class="profession-content">
+
+            <span class="profession-section-label">
+                RUTA DE APRENDIZAJE
+            </span>
+
+
+            <h2>
+                ¿Qué aprenderás?
+            </h2>
+
+
+            <p>
+                Esta ruta está diseñada para llevarte
+                desde los fundamentos hasta la aplicación
+                práctica de los conocimientos.
+            </p>
+
+
+            <div class="profession-topics">
+
+
+                <article class="profession-topic">
+
+                    <strong>
+                        01 — Fundamentos
+                    </strong>
+
+                    <span>
+                        Comprende los conceptos esenciales
+                        de la profesión.
+                    </span>
+
+                </article>
+
+
+                <article class="profession-topic">
+
+                    <strong>
+                        02 — Conceptos clave
+                    </strong>
+
+                    <span>
+                        Aprende las herramientas y principios
+                        más importantes.
+                    </span>
+
+                </article>
+
+
+                <article class="profession-topic">
+
+                    <strong>
+                        03 — Aplicación
+                    </strong>
+
+                    <span>
+                        Pon en práctica lo aprendido mediante
+                        ejercicios.
+                    </span>
+
+                </article>
+
+
+                <article class="profession-topic">
+
+                    <strong>
+                        04 — Proyecto
+                    </strong>
+
+                    <span>
+                        Demuestra tus conocimientos con un
+                        proyecto final.
+                    </span>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+    <script type="module">
+
+        import { professions } from "./js/professions.js";
+
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const professionId =
+            params.get("profession");
+
+
+        const profession =
+            professions.find(
+                item =>
+                    item.id === professionId
+            );
+
+
+        const icon =
+            document.getElementById(
+                "professionIcon"
+            );
+
+
+        const category =
+            document.getElementById(
+                "professionCategory"
+            );
+
+
+        const title =
+            document.getElementById(
+                "professionTitle"
+            );
+
+
+        const description =
+            document.getElementById(
+                "professionDescription"
+            );
+
+
+        const start =
+            document.getElementById(
+                "startLearning"
+            );
+
+
+        if (profession) {
+
+            icon.textContent =
+                profession.icono;
+
+
+            category.textContent =
+                profession.categoria;
+
+
+            title.textContent =
+                profession.nombre;
+
+
+            description.textContent =
+                profession.descripcion;
+
+
+            start.href =
+                `learning.html?profession=${profession.id}`;
+
+        } else {
+
+            title.textContent =
+                "Profesión no encontrada";
+
+
+            description.textContent =
+                "No se pudo encontrar la profesión seleccionada.";
+
+
+            start.style.display =
+                "none";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
