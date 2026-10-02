@@ -1,0 +1,618 @@
+/* ==========================================
+   STUDYTECH - LEARNING
+   ========================================== */
+
+.learning-page {
+    margin: 0;
+    padding: 0;
+    background: #08080d;
+    color: #f5f3ff;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+
+.learning-page .navbar {
+    width: 100%;
+    min-height: 72px;
+    background: #0d0b14;
+    border-bottom: 1px solid #2a183d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    box-sizing: border-box;
+}
+
+.learning-page .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.learning-page .brand-mark {
+    width: 42px;
+    height: 42px;
+    background: #8b5cf6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+}
+
+.learning-page .brand-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.learning-page .brand-subtitle {
+    font-size: 11px;
+    color: #a78bfa;
+    margin-top: 2px;
+}
+
+.learning-page .back-button {
+    color: #c4b5fd;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 16px;
+    border: 1px solid #4c2670;
+    border-radius: 8px;
+}
+
+.learning-page .back-button:hover {
+    background: #21132f;
+    color: white;
+}
+
+
+/* ==========================================
+   CABECERA
+   ========================================== */
+
+.learning-page .profession-header {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 35px 35px;
+    box-sizing: border-box;
+}
+
+.learning-page .breadcrumb {
+    color: #a78bfa;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.learning-page .profession-header h1 {
+    margin: 0 0 15px;
+    font-size: 42px;
+    line-height: 1.2;
+    color: white;
+}
+
+.learning-page .profession-header p {
+    max-width: 850px;
+    margin: 0;
+    color: #b9b3c9;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+
+.learning-page .learning-layout {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 35px 60px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   SIDEBAR
+   ========================================== */
+
+.learning-page .learning-sidebar {
+    background: #0e0c15;
+    border: 1px solid #28183b;
+    border-radius: 14px;
+    padding: 22px;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.learning-page .sidebar-title {
+    color: #c084fc;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.learning-page .lesson-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.learning-page .lesson-item {
+    width: 100%;
+    padding: 13px 12px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #aaa3b8;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.learning-page .lesson-item:hover {
+    background: #181021;
+    color: white;
+}
+
+.learning-page .lesson-item.active {
+    background: #241237;
+    border-color: #7c3aed;
+    color: white;
+}
+
+.learning-page .lesson-item.completed {
+    color: #c4b5fd;
+}
+
+
+/* ==========================================
+   PROGRESO
+   ========================================== */
+
+.learning-page .progress-box {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #28183b;
+}
+
+.learning-page .progress-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #aaa3b8;
+    font-size: 12px;
+}
+
+.learning-page #progressText {
+    color: #c084fc;
+    font-weight: bold;
+}
+
+.learning-page .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #211827;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.learning-page #progressFill {
+    width: 0;
+    height: 100%;
+    background: #8b5cf6;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+
+/* ==========================================
+   CONTENIDO
+   ========================================== */
+
+.learning-page .lesson-content {
+    min-width: 0;
+}
+
+.learning-page .lesson-card {
+    background: #0e0c15;
+    border: 1px solid #28183b;
+    border-radius: 16px;
+    padding: 38px;
+    box-sizing: border-box;
+}
+
+.learning-page .lesson-top {
+    margin-bottom: 15px;
+}
+
+.learning-page .lesson-status {
+    display: inline-block;
+    color: #c084fc;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.learning-page .lesson-card h2 {
+    margin: 0 0 18px;
+    color: white;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+.learning-page .lesson-text {
+    margin: 0 0 35px;
+    color: #c2bdca;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   SECCIONES
+   ========================================== */
+
+.learning-page .content-section {
+    margin-top: 35px;
+}
+
+.learning-page .content-section-label {
+    color: #a78bfa;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.learning-page .content-section h3 {
+    margin: 0 0 20px;
+    color: white;
+    font-size: 24px;
+}
+
+
+/* ==========================================
+   CONCEPTOS
+   ========================================== */
+
+.learning-page .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.learning-page .concept-card {
+    background: #14101c;
+    border: 1px solid #30203f;
+    border-radius: 12px;
+    padding: 22px;
+    box-sizing: border-box;
+}
+
+.learning-page .concept-card:hover {
+    border-color: #7c3aed;
+}
+
+.learning-page .concept-card-number {
+    display: block;
+    margin-bottom: 10px;
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.learning-page .concept-card h4 {
+    margin: 0 0 18px;
+    color: white;
+    font-size: 20px;
+}
+
+.learning-page .concept-card strong {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    color: #c084fc;
+    font-size: 14px;
+}
+
+.learning-page .concept-card p {
+    margin: 0;
+    color: #bdb6c8;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   EJEMPLO DE CODIGO
+   ========================================== */
+
+.learning-page .code-example {
+    background: #07070b;
+    border: 1px solid #30203f;
+    border-radius: 10px;
+    padding: 22px;
+    overflow-x: auto;
+}
+
+.learning-page .code-example pre {
+    margin: 0;
+    color: #d8b4fe;
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+
+/* ==========================================
+   IMPORTANTE
+   ========================================== */
+
+.learning-page .important-box {
+    margin-top: 35px;
+    padding: 22px;
+    background: #1a1027;
+    border-left: 4px solid #8b5cf6;
+    border-radius: 8px;
+    color: #c9c2d2;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.learning-page .important-box strong {
+    color: #c084fc;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   EJERCICIO
+   ========================================== */
+
+.learning-page .exercise-box {
+    margin-top: 35px;
+    padding: 28px;
+    background: #120e19;
+    border: 1px solid #352044;
+    border-radius: 12px;
+}
+
+.learning-page .exercise-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.learning-page .exercise-number {
+    width: 42px;
+    height: 42px;
+    background: #7c3aed;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.learning-page .exercise-header small {
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.learning-page .exercise-header h3 {
+    margin: 4px 0 0;
+    color: white;
+    font-size: 21px;
+}
+
+.learning-page .exercise-question {
+    color: #ddd7e4;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.learning-page .exercise-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.learning-page .exercise-option {
+    width: 100%;
+    padding: 14px 16px;
+    background: #18131f;
+    border: 1px solid #3a2849;
+    border-radius: 8px;
+    color: #ddd7e4;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.learning-page .exercise-option:hover {
+    background: #241631;
+    border-color: #8b5cf6;
+}
+
+.learning-page .exercise-option.correct {
+    background: #15251d;
+    border-color: #4ade80;
+    color: #86efac;
+}
+
+.learning-page .exercise-option.incorrect {
+    background: #281519;
+    border-color: #ef4444;
+    color: #fca5a5;
+}
+
+.learning-page .exercise-result {
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.learning-page .exercise-result.correct {
+    background: #132019;
+    color: #86efac;
+}
+
+.learning-page .exercise-result.incorrect {
+    background: #241419;
+    color: #fca5a5;
+}
+
+
+/* ==========================================
+   NAVEGACION
+   ========================================== */
+
+.learning-page .lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #28183b;
+}
+
+.learning-page .lesson-navigation button {
+    padding: 12px 18px;
+    border: 1px solid #4b2870;
+    border-radius: 8px;
+    background: #171020;
+    color: #ddd6fe;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.learning-page .lesson-navigation button:hover:not(:disabled) {
+    background: #28133d;
+    border-color: #8b5cf6;
+}
+
+.learning-page .lesson-navigation button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.learning-page #completeLesson {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: white;
+}
+
+.learning-page #completeLesson:hover {
+    background: #8b5cf6;
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.learning-page .footer {
+    margin-top: 20px;
+    padding: 30px;
+    border-top: 1px solid #28183b;
+    text-align: center;
+    color: #81798e;
+    font-size: 13px;
+}
+
+.learning-page .footer strong {
+    color: #c084fc;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .learning-page .learning-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-page .learning-sidebar {
+        order: 2;
+    }
+
+    .learning-page .lesson-content {
+        order: 1;
+    }
+
+    .learning-page .concept-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .learning-page .navbar {
+        padding: 0 18px;
+    }
+
+    .learning-page .profession-header {
+        padding: 35px 18px 25px;
+    }
+
+    .learning-page .learning-layout {
+        padding: 0 18px 40px;
+    }
+
+    .learning-page .profession-header h1 {
+        font-size: 32px;
+    }
+
+    .learning-page .profession-header p {
+        font-size: 16px;
+    }
+
+    .learning-page .lesson-card {
+        padding: 24px;
+    }
+
+    .learning-page .lesson-card h2 {
+        font-size: 27px;
+    }
+
+    .learning-page .lesson-text {
+        font-size: 16px;
+    }
+
+    .learning-page .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .learning-page .lesson-navigation button {
+        width: 100%;
+    }
+}
